@@ -74,7 +74,7 @@ $(function () {
   visualSlider();
 
   /*-------- FITTING MD PICK IMAGE RATIO --------*/
-  function fitImageRatio(el1, el2, elv1, elv2) {
+  function fit2ImageRatio(el1, el2, elv1, elv2) {
     const mdImageWidth = $(el1).width();
     const panelWidth = $(el2).width();
     $(el1).height(mdImageWidth * elv1);
@@ -82,7 +82,7 @@ $(function () {
   }
 
   $(window).on("resize", function () {
-    fitImageRatio(
+    fit2ImageRatio(
       ".pick-tab-panel.on .panel-img",
       ".pick-tab-panel.on .panel-desc",
       0.8,
@@ -90,17 +90,28 @@ $(function () {
     );
   });
   $(".pick-tab-btn").on("click", function () {
-    fitImageRatio(
+    fit2ImageRatio(
       ".pick-tab-panel.on .panel-img",
       ".pick-tab-panel.on .panel-desc",
       0.8,
       0.4
     );
   });
-  fitImageRatio(
+  fit2ImageRatio(
     ".pick-tab-panel.on .panel-img",
     ".pick-tab-panel.on .panel-desc",
     0.8,
     0.4
   );
+
+  /*-------- FITTING NEW ART IMAGE RATIO --------*/
+  function fit1ImageRatio(el1, elv1) {
+    const fitElmtWidth = $(el1).width();
+    $(el1).height(fitElmtWidth * elv1);
+  }
+
+  fit1ImageRatio(".new-art-image", 1.4);
+  $(window).on("resize", function () {
+    fit1ImageRatio(".new-art-image", 1.4);
+  });
 });
