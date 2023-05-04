@@ -49,7 +49,7 @@ setTimeout(() => {
       document.body.style.overflow = "auto";
     }
   });
-}, 100);
+}, 300);
 
 /*-------- BEST ITEMS SLIDE --------*/
 const isSwiper = document.querySelectorAll(".swiper-wrapper");
