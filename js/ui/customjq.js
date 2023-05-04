@@ -9,6 +9,7 @@ $(function () {
 
   // 메인 랜딩 슬라이더
   /*===== VISUAL SLIDER FUNCTION ===== */
+
   function visualSlider() {
     var visualSlider = new Swiper(".landing-slider", {
       loop: true,
@@ -71,7 +72,10 @@ $(function () {
       $(".landing-slider").removeClass("load-init");
     });
   }
-  visualSlider();
+  const isSwiper = $(".swiper-wrapper");
+  if (isSwiper.length > 0) {
+    visualSlider();
+  }
 
   /*-------- FITTING MD PICK IMAGE RATIO --------*/
   function fit2ImageRatio(el1, el2, elv1, elv2) {
