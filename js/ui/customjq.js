@@ -1,10 +1,14 @@
 $(function () {
   /* -- 헤더 높이만큼 페딩 적용 */
-  const headerHeight = $("header").outerHeight();
-  $(".landing").css("padding-top", `${headerHeight}px`);
+  setTimeout(() => {
+    const headerHeight = $("header").outerHeight();
+    $(".landing").css("padding-top", `${headerHeight}px`);
+    $(".sign-form").css("padding-top", `${headerHeight}px`);
+  }, 300);
   $(window).on("resize", function () {
     const headerHeight = $("header").outerHeight();
     $(".landing").css("padding-top", `${headerHeight}px`);
+    $(".sign-form").css("padding-top", `${headerHeight}px`);
   });
 
   // 메인 랜딩 슬라이더
@@ -140,9 +144,12 @@ $(function () {
   });
 
   /*-------- LOADER EFFECT --------*/
-  $(".js-preloader").preloadinator({
-    minTime: 1000,
-    animation: "fadeOut",
-    animationDuration: 400,
-  });
+  const isPreloader = $(".preloader");
+  if (isPreloader.length > 0) {
+    $(".js-preloader").preloadinator({
+      minTime: 1000,
+      animation: "fadeOut",
+      animationDuration: 400,
+    });
+  }
 });
