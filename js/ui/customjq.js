@@ -146,6 +146,7 @@ $(function () {
   /*-------- LOADER EFFECT --------*/
   const isPreloader = $(".preloader");
   if (isPreloader.length > 0) {
+    // (isPreloader !== null)
     $(".js-preloader").preloadinator({
       minTime: 1000,
       animation: "fadeOut",
