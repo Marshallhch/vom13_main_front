@@ -5,7 +5,7 @@ let pageName = "";
 
 if (pageURL.includes("index")) {
   pageName = "main";
-} else if (pageURL.includes("sign")) {
+} else if (pageURL.includes("sign") || pageURL.includes("admin")) {
   pageName = "sign";
 }
 
@@ -23,7 +23,7 @@ const cssFileNames = [
 for (let i = 0; i < cssFileNames.length; i++) {
   const cssFile = document.createElement("link");
   cssFile.rel = "stylesheet";
-  cssFile.href = `/main_project_vom13/baexang_front/css/${cssFileNames[i]}.css?_v=${versionUpdate}`;
+  cssFile.href = `/baexang_front/css/${cssFileNames[i]}.css?_v=${versionUpdate}`;
   document.head.insertAdjacentElement("beforeend", cssFile);
 }
 
@@ -33,7 +33,7 @@ const jsFileNames = ["customjs", "customjq"];
 for (let i = 0; i < jsFileNames.length; i++) {
   const jsFile = document.createElement("script");
   jsFile.type = "text/javascript";
-  jsFile.src = `/main_project_vom13/baexang_front/js/ui/${jsFileNames[i]}.js?_v=${versionUpdate}`;
+  jsFile.src = `/baexang_front/js/ui/${jsFileNames[i]}.js?_v=${versionUpdate}`;
   document.body.insertAdjacentElement("beforeend", jsFile);
 }
 
@@ -41,6 +41,6 @@ const isLoginElmt = document.createElement("script");
 
 isLoginElmt.type = "text/javascript";
 isLoginElmt.async = true;
-isLoginElmt.src = `/main_project_vom13/baexang_front/js/request/register/isLogin.js?_v=${versionUpdate}`;
+isLoginElmt.src = `/baexang_front/js/request/register/isLogin.js?_v=${versionUpdate}`;
 
 document.head.insertAdjacentElement("beforeend", isLoginElmt);

@@ -55,7 +55,7 @@
 .best-art .best-info .item-price span{font-size:1.25rem; font-weight:400; font-family:var(--ff-kr-serif);}
 
 /* MD Pick Section Style */
-.pick{background:url('/main_project_vom13/baexang_front/images/pick-bg.jpeg') no-repeat center center; background-size:cover;}
+.pick{background:url('/baexang_front/images/pick-bg.jpeg') no-repeat center center; background-size:cover;}
 .pick .pick-tab-wrapper{width:100%; height:auto; padding:0 6.25rem;}
 .pick .pick-tab-btns{width:100%; height:auto; margin:3.125rem 0; display:flex; justify-content: center; column-gap: 1.125rem;}
 .pick .pick-tab-btn{font-size:1.125rem; color:#999;}
@@ -115,7 +115,7 @@
 
 /* Direct Gallery Style */
 .direct-gallery{padding:0 var(--el-main);}
-.direct-gallery .container{width:100%; height:auto; background:url(/main_project_vom13/baexang_front/images/gallery-bg.jpg) no-repeat center center; background-size:cover; padding:9.375rem var(--el-main); max-width:none; background-attachment: fixed;}
+.direct-gallery .container{width:100%; height:auto; background:url(/baexang_front/images/gallery-bg.jpg) no-repeat center center; background-size:cover; padding:9.375rem var(--el-main); max-width:none; background-attachment: fixed;}
 .direct-gallery .direct-gallery-inside{width:100%; max-width:1400px; padding:5rem 1.25rem; margin:auto; background:rgba(255, 255, 255, 0.8); text-align:center;}
 .direct-gallery .direct-gallery-inside h2{font-size:2.5rem; color:#333; font-weight:600; font-family:var(--ff-en); display:flex; width:100%; justify-content: center; column-gap: .5rem; flex-wrap:wrap;}
 .direct-gallery .direct-gallery-inside span{opacity:0; transform:rotateY(-90deg);}
