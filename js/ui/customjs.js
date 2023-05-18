@@ -1,8 +1,12 @@
 /*-------- HEADER HIDE AND SHOW --------*/
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+
 setTimeout(() => {
+  // window.addEventListener('DOMContentLoaded', function () {
+  // function loadDom() {
   let prevScrollpos = window.pageYOffset;
   const header = document.querySelector("header");
+  // console.log(header);
 
   window.addEventListener("scroll", function () {
     const currentScrollPos = window.pageYOffset;
@@ -23,6 +27,7 @@ setTimeout(() => {
   const mobileMenuIcon = document.querySelector(".menu-icon");
   const mobileOverlay = document.querySelector(".mobile-overlay");
   const mobileCloseIcon = document.querySelector(".close-icon");
+  // console.log(mobileMenuIcon);
   mobileMenuIcon.addEventListener("click", function (e) {
     e.preventDefault(); // default original effect prevented
     mobileOverlay.classList.add("on");
@@ -49,7 +54,8 @@ setTimeout(() => {
       document.body.style.overflow = "auto";
     }
   });
-}, 500);
+}, 2000);
+// }
 
 /*-------- BEST ITEMS SLIDE --------*/
 const isSwiper = document.querySelectorAll(".swiper-wrapper");
@@ -114,27 +120,37 @@ if (isSwiper.length > 0) {
 
 /*-------- MD PICK TBAS --------*/
 // 1. 요소 선택
+// pick 패널 요소
 const btns = document.querySelectorAll(".pick-tab-btn");
 const panels = document.querySelectorAll(".pick-tab-panel");
 
+// admin 패널 요소
+const adminBtns = document.querySelectorAll(".admin-btns button");
+const adminPanels = document.querySelectorAll(".admin-panel");
+
 // 2. 함수 정의
-function activeTabs(i) {
-  btns.forEach((btn) => {
-    btn.classList.remove("on");
+function commonTabs(bts, pns) {
+  function activeTabs(i) {
+    bts.forEach((btn) => {
+      btn.classList.remove("on");
+    });
+    pns.forEach((panel) => {
+      panel.classList.remove("on");
+    });
+    bts[i].classList.add("on");
+    pns[i].classList.add("on");
+  }
+
+  // 3. 함수 호출
+  bts.forEach((btn, idx) => {
+    btn.addEventListener("click", () => {
+      activeTabs(idx);
+    });
   });
-  panels.forEach((panel) => {
-    panel.classList.remove("on");
-  });
-  btns[i].classList.add("on");
-  panels[i].classList.add("on");
 }
 
-// 3. 함수 호출
-btns.forEach((btn, idx) => {
-  btn.addEventListener("click", () => {
-    activeTabs(idx);
-  });
-});
+commonTabs(btns, panels); // pick 패널 실행
+commonTabs(adminBtns, adminPanels); // admin 패널 실행
 
 // Direct Gallery Text Effect
 const dgLetters = document.querySelectorAll(".direct-gallery-inside span");
@@ -179,16 +195,19 @@ function fitBrowerHeight(el1, el2) {
   }
 }
 
-setTimeout(() => {
-  fitBrowerHeight(window, ".wrapper");
-}, 300);
+fitBrowerHeight(window, ".wrapper");
 
-const delay = 200;
-let timer = null;
-$(window).on("resize", function () {
-  clearTimeout(timer);
-  timer = setTimeout(function () {
-    fitBrowerHeight(window, ".wrapper");
-    document.location.reload();
-  }, delay);
-});
+// 모바일 버전 감지 후 PC 버전에서만 실행 시킴(계획)
+// setTimeout(() => {
+//   fitBrowerHeight(window, ".wrapper");
+// }, 300);
+
+// const delay = 200;
+// let timer = null;
+// $(window).on("resize", function () {
+//   clearTimeout(timer);
+//   timer = setTimeout(function () {
+//     fitBrowerHeight(window, ".wrapper");
+//     document.location.reload();
+//   }, delay);
+// });
