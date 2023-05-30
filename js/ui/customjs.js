@@ -117,6 +117,11 @@ setTimeout(() => {
       },
     });
   }
+
+  /*----- AOS Plugin Initiate ----- */
+  AOS.init({
+    duration: 1200,
+  });
 }, 2000);
 
 /*-------- MD PICK TBAS --------*/
@@ -168,11 +173,6 @@ dgLetters.forEach((lt, i) => {
     // console.log(strArr[0]);
     // lt.style.animationDelay = `${strArr[0]}.${strArr[1]}s`;
   }
-});
-
-/*----- AOS Plugin Initiate ----- */
-AOS.init({
-  duration: 1200,
 });
 
 // 브라우저가 컨텐츠 내용 보다 크면 요소를 화면 위아래로 맞춤
