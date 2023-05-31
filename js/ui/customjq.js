@@ -4,11 +4,13 @@ $(function () {
     const headerHeight = $("header").outerHeight();
     $(".landing").css("padding-top", `${headerHeight}px`);
     $(".sign-form").css("padding-top", `${headerHeight}px`);
+    $(".best .best-section").css("padding-top", `${headerHeight}px`);
   }, 300);
   $(window).on("resize", function () {
     const headerHeight = $("header").outerHeight();
     $(".landing").css("padding-top", `${headerHeight}px`);
     $(".sign-form").css("padding-top", `${headerHeight}px`);
+    $(".best .best-section").css("padding-top", `${headerHeight}px`);
   });
 
   // 메인 랜딩 슬라이더
@@ -129,6 +131,15 @@ $(function () {
     $(window).on("resize", function () {
       fit1ImageRatio(".review-image", 0.8);
     });
+
+    /*-------- FITTING BEST PAGE RATIO --------*/
+    fit1ImageRatio(".best .best-image img", 1);
+    $(window).on("resize", function () {
+      fit1ImageRatio(".best .best-image img", 1);
+    });
+
+    // const imageHeight = $(".best .best-image img").height();
+    // $(".view-more-box").height(imageHeight * 0.8);
   }, 2000);
 
   /*-------- GO TO TOP --------*/
