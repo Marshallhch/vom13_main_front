@@ -132,10 +132,16 @@ $(function () {
       fit1ImageRatio(".review-image", 0.8);
     });
 
-    /*-------- FITTING BEST PAGE RATIO --------*/
+    /*-------- FITTING PRODUCT SLIDER IMAGE RATIO --------*/
     fit1ImageRatio(".product .product-image img", 1);
     $(window).on("resize", function () {
       fit1ImageRatio(".product .product-image img", 1);
+    });
+
+    /*-------- FITTING BEST PAGE RATIO --------*/
+    fit1ImageRatio(".product .swiper", 0.8);
+    $(window).on("resize", function () {
+      fit1ImageRatio(".product .swiper", 0.8);
     });
 
     // const imageHeight = $(".best .best-image img").height();
