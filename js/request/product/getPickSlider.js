@@ -1,6 +1,5 @@
 window.addEventListener("load", function () {
   getPickData();
-  // console.log(endPoints);
 });
 
 async function getPickData() {
@@ -9,7 +8,6 @@ async function getPickData() {
 
   try {
     const data = await getRequest(getPickUrl);
-    // console.log(data);
     const pickImgLists = document.querySelector(
       ".product-preview .swiper-wrapper"
     );
@@ -22,7 +20,7 @@ async function getPickData() {
     data.forEach((pickData) => {
       pickImgList = `
         <div class="swiper-slide">
-          <a href='#'>
+          <a href='/baexang_front/pages/detail.html?pid=${pickData.pr_ID}&cate=${pickData.pr_type}'>
             <img src="${pickData.pr_img}" alt="">
           </a>
         </div>
