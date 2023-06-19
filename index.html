@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
 
  <!-- Favicon -->
  <link rel="shortcut icon" href="/baexang_front/images/icon/favicon.ico">
@@ -15,8 +15,8 @@
 
  <style>
   .preloader{position:fixed; background:#fff; width:100%; height:100vh; left:0; top:0; z-index:9999; display:flex; align-items: center; justify-content: center;}
-  .preloader img{width:25%;}
  </style>
+  
 </head>
 <body>
   <div class="wrapper">
@@ -289,15 +289,32 @@
       <img src="/baexang_front/images/icon/ico-go-top.png" alt="맨위로 버튼">
     </div>
   </div>
-
-  <!-- <div class="preloader js-preloader">
-    <img src="/baexang_front/images/loader.gif" alt="">
-  </div> -->
+  
+  <div class="preloader js-preloader">
+    <div class="loader"></div>
+  </div>
 
   <script>
-    window.addEventListener('load', function(){;
-      if(urlPath === `https://${domain}/baexang_front/`){
-        location.href = `https://${domain}/baexang_front/index.html`;
+    function onLoad(callback){
+      if (document.readyState === 'complete') {
+          callback();
+      } else {
+          window.addEventListener("load", callback);
+      }
+    }
+
+    onLoad(function(){
+      let protocolName = '';
+      if(navigator.userAgent.toLowerCase().indexOf('chrome') > -1){
+        protocolName = 'https';
+      } else {
+        protocolName = 'http';
+      }
+
+      if(urlPath === `${domain}/baexang_front/`){
+        location.href = `${protocolName}://${domain}/baexang_front/index.html`;
+      } else if(urlPath === `${protocolName}://${domain}/baexang_front/`){
+        location.href = `${protocolName}://${domain}/baexang_front/index.html`;
       }
     });
   </script>
@@ -308,9 +325,22 @@
   <!-- Plugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- <script src="/baexang_front/js/etc/jquery.preloadinator.min.js"></script> -->
+  <script src="/baexang_front/js/ui/jquery.preloadinator.min.js"></script>
 
   <script src="/baexang_front/js/etc/head-contents.js"></script>
   <script src="/baexang_front/js/request/product/getProducts.js"></script>
+
+  <script>
+    function Mobile(){
+	    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+	
+    if (Mobile()){// 모바일일 경우
+      const glbg = document.querySelector('.direct-gallery .container');
+      glbg.style.backgroundAttachment = 'scroll';
+    } else {// 모바일 외
+        
+    }
+  </script>
 </body>
 </html>

@@ -149,7 +149,7 @@ setTimeout(() => {
   AOS.init({
     duration: 1200,
   });
-}, 2000);
+}, 1200);
 
 /*-------- MD PICK TBAS --------*/
 // 1. 요소 선택
@@ -225,7 +225,7 @@ function fitBrowerHeight(el1, el2) {
 
 setTimeout(() => {
   fitBrowerHeight(window, ".wrapper");
-}, 2000);
+}, 1200);
 
 // 모바일 버전 감지 후 PC 버전에서만 실행 시킴(계획)
 // setTimeout(() => {

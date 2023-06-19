@@ -59,7 +59,7 @@ const insertCommentData = () => {
       try {
         const data = await postRequest(url, options);
         alert(data.msg);
-        location.reload();
+        window.location.reload();
       } catch (error) {
         console.log("Error", error);
       }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
 
   <!-- Remix Icon -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
@@ -14,6 +14,10 @@
 
   <!-- Plugin CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    .preloader{position:fixed; background:#fff; width:100%; height:100vh; left:0; top:0; z-index:9999; display:flex; align-items: center; justify-content: center;}
+   </style>
 </head>
 <body>
   <div class="wrapper detail">
@@ -94,8 +98,8 @@
         </div>
         <div class="item-order-info-clone">
           <div class="item-title-box">
-            <h3>키스</h3>
-            <p>구스타프 클립트</p>
+            <h3></h3>
+            <p></p>
           </div>
           <span class="line"></span>
           <div class="item-size-box">
@@ -232,80 +236,17 @@
             <button type="submit" class="cmt-insert">입력</button>
           </form>
 
-          <div class="review-lists">
-            <!-- <div class="review-list">
-              <div class="review-list-info">
-                <span class="id-reg">
-                  <strong>marshall36</strong>
-                  <span>2023-06-09</span>
-                  <span class="star-list">
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-line"></i>
-                    <i class="ri-star-line"></i>
-                    <i class="ri-star-line"></i>
-                  </span>
-                </span>
-                <span class="btns">
-                  <button class="cmt-update">수정</button>
-                  <button class="cmt-delete">삭제</button>
-                </span>
-              </div>
-              <div class="review-list-content">
-                <p>첫 작품 평가입니다</p>
-              </div>
-            </div>
-            <div class="review-list">
-              <div class="review-list-info">
-                <span class="id-reg">
-                  <strong>marshall36</strong>
-                  <span>2023-06-09</span>
-                  <span class="star-list">
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-line"></i>
-                    <i class="ri-star-line"></i>
-                    <i class="ri-star-line"></i>
-                  </span>
-                </span>
-                <span class="btns">
-                  <button class="cmt-update">수정</button>
-                  <button class="cmt-delete">삭제</button>
-                </span>
-              </div>
-              <div class="review-list-content">
-                <p>첫 작품 평가입니다</p>
-              </div>
-            </div>
-            <div class="review-list">
-              <div class="review-list-info">
-                <span class="id-reg">
-                  <strong>marshall36</strong>
-                  <span>2023-06-09</span>
-                  <span class="star-list">
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-line"></i>
-                    <i class="ri-star-line"></i>
-                    <i class="ri-star-line"></i>
-                  </span>
-                </span>
-                <span class="btns">
-                  <button class="cmt-update">수정</button>
-                  <button class="cmt-delete">삭제</button>
-                </span>
-              </div>
-              <div class="review-list-content">
-                <p>첫 작품 평가입니다</p>
-              </div>
-            </div> -->
-          </div>
+          <div class="review-lists"></div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
     <div id="footer-wrapper"></div>
+  </div>
+
+  <div class="preloader js-preloader">
+    <div class="loader"></div>
   </div>
   <!-- jQuery CDN Link -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
